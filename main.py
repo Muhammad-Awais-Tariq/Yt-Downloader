@@ -39,3 +39,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#add the task to select the specific quality to download
+#add the option to select between playlist and video
+#download all the videos in the playlist
+#using streamlit make an interactive gui
