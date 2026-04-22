@@ -40,3 +40,7 @@ if url:
                 with st.spinner("Downloading video..."):
                     download_video(url, destination, quality)
                 st.success("Video downloaded successfully!")
+
+st.divider()
+link = "https://www.linkedin.com/in/muhammadawaistariq/"
+st.markdown("Made by: [Muhammad Awais tariq](%s)" %link)
