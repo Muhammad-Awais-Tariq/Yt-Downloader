@@ -21,7 +21,6 @@ Run either the CLI or the Streamlit web app — both share the same core logic f
 - The app detects whether it's a single video or a playlist based on `list=` in the URL
 - For videos: available MP4 qualities are fetched and you pick one before downloading
 - For playlists: you specify a destination folder and the bot downloads all videos into it
-- In the web app, each file is made available as an in-browser download button
 - If `ffmpeg` is found locally at `./ffmpeg/bin/ffmpeg.exe`, it is used for merging streams
 
 ## Commands / Usage
@@ -134,7 +133,6 @@ project/
 - Python
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — YouTube download engine
 - [Streamlit](https://streamlit.io/) — Web UI framework
-- tempfile module — Temporary file handling for in-browser downloads
 - os module — File and path management
 
 ---
