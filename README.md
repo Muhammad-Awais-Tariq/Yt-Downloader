@@ -118,8 +118,7 @@ python main.py
 project/
 │── main.py               
 │── webapp.py
-│── ffmpeg
-│── packages.txt          
+│── ffmpeg        
 │── README.md
 │── .python-version
 │── pyproject.toml
