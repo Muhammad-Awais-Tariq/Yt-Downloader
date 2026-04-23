@@ -1,6 +1,6 @@
 import streamlit as st
 from main import get_info, get_quality, download_video, download_playlist
-import tempfile ,os
+
 st.set_page_config(page_title="YouTube Downloader", layout="centered")
 
 st.title("YouTube Downloader")
@@ -21,21 +21,9 @@ if url:
         destination = st.text_input("Download folder path", "downloads")
         folder_name = st.text_input("Playlist folder name", "my_playlist")
 
-        if st.button("Download Playlist"):
+        if st.button("⬇ Download Playlist"):
             with st.spinner("Downloading playlist..."):
-                with tempfile.TemporaryDirectory() as tmpdir:                
-                    download_playlist(url, tmpdir, folder_name)
-                    playlist_dir = os.path.join(tmpdir, folder_name)
-                    for fname in os.listdir(playlist_dir):
-                        fpath = os.path.join(playlist_dir, fname)
-                        with open(fpath, "rb") as f:
-                            st.download_button(
-                                label=f"{fname}",
-                                data=f,
-                                file_name=fname,
-                                mime="video/mp4"
-                            )                    
-
+                download_playlist(url, destination, folder_name)
             st.success("Playlist downloaded successfully!")
 
     else:
@@ -50,18 +38,7 @@ if url:
 
             if st.button("Download Video"):
                 with st.spinner("Downloading video..."):
-                    with tempfile.TemporaryDirectory() as tmpdir:
-                        download_video(url, tmpdir, quality)
-                        fname = os.listdir(tmpdir)[0]
-                        fpath = os.path.join(tmpdir, fname)
-                        with open(fpath, "rb") as f:
-                            st.download_button(
-                                label=f"{fname}",
-                                data=f,
-                                file_name=fname,
-                                mime="video/mp4"
-                            )
-
+                    download_video(url, destination, quality)
                 st.success("Video downloaded successfully!")
 
 st.divider()
