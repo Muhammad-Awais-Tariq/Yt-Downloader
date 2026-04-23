@@ -1,4 +1,5 @@
 import yt_dlp
+import os
 
 def get_info(url):
     with yt_dlp.YoutubeDL({"quiet": True,"no_warnings": True,}) as ydl:
@@ -12,9 +13,10 @@ def download_video(url , destination ,quality):
         "no_warnings": True,
         'format': f'bestvideo[height={quality}]+bestaudio/best',
         'outtmpl': f'{destination}/%(title)s.%(ext)s',
-        'ffmpeg_location': './ffmpeg/bin/ffmpeg.exe',
-
     }
+
+    if os.path.exists("./ffmpeg/bin/ffmpeg.exe"):
+        video_opts['ffmpeg_location'] = './ffmpeg/bin/ffmpeg.exe'
 
     with yt_dlp.YoutubeDL(video_opts) as ydl:
         ydl.download([url])
