@@ -1,15 +1,3 @@
----
-title: YouTube Downloader
-emoji: 🎬
-colorFrom: red
-colorTo: gray
-sdk: streamlit
-sdk_version: 1.44.1
-app_file: webapp.py
-pinned: false
-license: mit
----
-
 # YouTube Downloader
 
 A clean and simple YouTube video & playlist downloader with both a **CLI interface** and a **Streamlit web app**. Supports quality selection, playlist downloading, and in-browser file saving — built with `yt-dlp` under the hood.
@@ -89,25 +77,6 @@ Open the URL shown in the terminal (usually `http://localhost:8501`).
 - Download buttons appear for each file once complete
 
 ---
-
-## Hosting on Hugging Face Spaces
-
-This app is deployed on **Hugging Face Spaces** using the Streamlit SDK.
-
-To deploy your own copy:
-
-1. Fork or clone this repository.
-2. Go to [huggingface.co/spaces](https://huggingface.co/spaces) and click **Create new Space**.
-3. Select **Streamlit** as the SDK.
-4. Push your code to the Space repository:
-```bash
-   git remote add space https://huggingface.co/spaces/<your-username>/<your-space-name>
-   git push space main
-```
-5. Hugging Face will automatically install dependencies from `requirements.txt` and launch `webapp.py`.
-
----
-
 ## How to Run Locally
 
 ### Prerequisites
