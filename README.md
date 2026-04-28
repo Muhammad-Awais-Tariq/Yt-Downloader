@@ -104,12 +104,19 @@ streamlit run webapp.py
 
 ---
 
-### Option 2: CLI
-
-```bash
-python main.py
-```
-
+### Option 2: Using uv (Optional)
+1. Install **uv** (if not already installed):
+   ```bash
+   pip install uv
+   ```
+2. Sync the project environment:
+   ```bash
+   uv sync
+   ```
+3. Run the program:
+   ```bash
+   uv run main.py
+   ```
 ---
 
 ## File Structure
